@@ -8,10 +8,14 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Panel;
+use Illuminate\Contracts\Auth\Access\Authorizable;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 class User extends Authenticatable implements FilamentUser
 {
+    use HasRoles;
     public function canAccessPanel(Panel $panel): bool
     {
         if ($panel->getId() === 'admin') {
