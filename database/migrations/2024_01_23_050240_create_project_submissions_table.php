@@ -15,8 +15,15 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('abstract');
-            $table->string('categories');
+            $table->string('categories')->nullable();
             $table->string('subject');
+            $table->string('professor');
+            $table->string('proofreader')->nullable();
+            $table->string('attachments')->nullable();
+            $table->string('attachments_names')->nullable();
+            $table->string('team');
+            $table->string('academic_year');
+            $table->string('term');
             $table->timestamps();
         });
     }

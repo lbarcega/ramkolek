@@ -15,6 +15,18 @@ class ProjectSubmission extends ApprovableModel
         'abstract',
         'categories',
         'subject',
+        'professor',
+        'proofreader',
+        'attachments',
+        'attachments_names',
+        'team',
+        'academic_year',
+        'term',
     ];
+    protected $casts = [
+        'attachments' => 'array',
+        'attachments_names' => 'array',
+    ];
+    
     
 }
